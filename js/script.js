@@ -1,4 +1,4 @@
 'use strict';
 
-let name = prompt('vvedi imya');
-document.write(`Privet ${name}, hoy are you?`);
+console.log(5%2);
+
