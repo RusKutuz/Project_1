@@ -2,7 +2,8 @@
 
 let numberOfFilms;
 function start() {
-   while (numberOfFilms < 1 || numberOfFilms > 5 || numberOfFilms == null || isNaN(numberOfFilms) || numberOfFilms === undefined) {
+   while (numberOfFilms < 1 || numberOfFilms > 5 || numberOfFilms == null || 
+    isNaN(numberOfFilms) || numberOfFilms === undefined) {
   numberOfFilms = + prompt ('Сколько фильмов Вы уже посмотрели?', ' ');
 }
 }
