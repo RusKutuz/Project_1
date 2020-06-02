@@ -1,5 +1,6 @@
 "use strict";
 
+
 let numberOfFilms;
 function start() {
    while (numberOfFilms < 1 || numberOfFilms > 5 || numberOfFilms == null || 
@@ -9,7 +10,15 @@ function start() {
 }
 start();
 
-function ocenkaZritelya () {
+const personalMovieDB = {
+  count: numberOfFilms,
+  movies: {},
+  actors: {},
+  genres: [],
+  privat: false,
+};
+
+function detectPersonalLevel () {
   if (numberOfFilms < 2 && numberOfFilms > 0) {
     alert ('Слишком мало фильмов');
   } else if (numberOfFilms > 1 && numberOfFilms < 4) {
@@ -20,18 +29,11 @@ function ocenkaZritelya () {
     alert ('Произошла ошибка');
 } 
 }
-ocenkaZritelya();
+detectPersonalLevel();
 
 
-const personalMovieDB = {
-    count: numberOfFilms,
-    movies: {},
-    actors: {},
-    genres: [],
-    privat: false,
-};
 
-function kakieFilmi() {
+function rememberMyFilms() {
   for (let i = 0; i < numberOfFilms; i++) {
     const a = prompt("Один из последних просмотренных фильмов?", '');
     const b = + prompt("На сколько оцените его (1-8)?", '');
@@ -42,7 +44,7 @@ function kakieFilmi() {
     }
   }
 }
-kakieFilmi();
+rememberMyFilms();
 
 function writeYourGenres() {
   for (let i = 1; i <= 3; i++) {
@@ -56,8 +58,8 @@ function writeYourGenres() {
 }
 writeYourGenres();
 
-function showMyDB (hidden) {
-  if (!hidden) {
+function showMyDB (priv) {
+  if (priv == false) {
     console.log(personalMovieDB);
   }
 }
